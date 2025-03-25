@@ -23,62 +23,42 @@ class ThemeProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> toggleTheme() async {
+  void toggleTheme() {
     _isDarkMode = !_isDarkMode;
-    await _prefs?.setBool(_storageKey, _isDarkMode);
     notifyListeners();
   }
 
-  ThemeData get theme {
-    return _isDarkMode ? _darkTheme : _lightTheme;
-  }
+  ThemeData get theme => _isDarkMode ? _darkTheme : _lightTheme;
 
   static final _lightTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.light,
-    colorScheme: ColorScheme.fromSeed(
-      seedColor: const Color(0xFF2196F3),
-      brightness: Brightness.light,
-    ).copyWith(
-      primary: const Color(0xFF2196F3),
-      secondary: const Color(0xFF03A9F4),
-      tertiary: const Color(0xFF00BCD4),
-      outline: Colors.grey.shade300,
+    colorScheme: ColorScheme.light(
+      primary: Colors.blue,
+      secondary: Colors.blueAccent,
+      surface: Colors.white,
+      background: Colors.grey[50]!,
+      error: Colors.red,
+      onPrimary: Colors.white,
+      onSecondary: Colors.white,
+      onSurface: Colors.black,
+      onBackground: Colors.black,
+      onError: Colors.white,
     ),
     textTheme: GoogleFonts.poppinsTextTheme(),
     cardTheme: CardTheme(
       elevation: 2,
-      shadowColor: Colors.grey.shade200,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
-        side: BorderSide(
-          color: Colors.grey.shade200,
-          width: 1,
-        ),
+        borderRadius: BorderRadius.circular(12),
       ),
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+    ),
+    appBarTheme: const AppBarTheme(
+      centerTitle: true,
+      elevation: 0,
     ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
-      elevation: 4,
-      backgroundColor: const Color(0xFF2196F3),
+      backgroundColor: Colors.blue,
       foregroundColor: Colors.white,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
-      ),
-    ),
-    appBarTheme: AppBarTheme(
-      elevation: 0,
-      centerTitle: true,
-      backgroundColor: Colors.white,
-      surfaceTintColor: Colors.transparent,
-      titleTextStyle: GoogleFonts.poppins(
-        fontSize: 24,
-        fontWeight: FontWeight.bold,
-        color: const Color(0xFF2196F3),
-      ),
-      iconTheme: const IconThemeData(
-        color: Color(0xFF2196F3),
-      ),
     ),
     tabBarTheme: TabBarTheme(
       labelColor: const Color(0xFF2196F3),
@@ -140,45 +120,32 @@ class ThemeProvider with ChangeNotifier {
   static final _darkTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.dark,
-    colorScheme: ColorScheme.fromSeed(
-      seedColor: const Color(0xFF2196F3),
-      brightness: Brightness.dark,
-    ).copyWith(
-      primary: const Color(0xFF2196F3),
-      secondary: const Color(0xFF03A9F4),
-      tertiary: const Color(0xFF00BCD4),
+    colorScheme: ColorScheme.dark(
+      primary: Colors.blue,
+      secondary: Colors.blueAccent,
+      surface: Colors.grey[900]!,
+      background: Colors.black,
+      error: Colors.red,
+      onPrimary: Colors.white,
+      onSecondary: Colors.white,
+      onSurface: Colors.white,
+      onBackground: Colors.white,
+      onError: Colors.white,
     ),
     textTheme: GoogleFonts.poppinsTextTheme(ThemeData.dark().textTheme),
     cardTheme: CardTheme(
-      elevation: 8,
-      shadowColor: const Color(0xFF2196F3).withOpacity(0.3),
+      elevation: 2,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(12),
       ),
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+    ),
+    appBarTheme: const AppBarTheme(
+      centerTitle: true,
+      elevation: 0,
     ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
-      elevation: 12,
-      backgroundColor: const Color(0xFF2196F3),
+      backgroundColor: Colors.blue,
       foregroundColor: Colors.white,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
-      ),
-      extendedPadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-    ),
-    appBarTheme: AppBarTheme(
-      elevation: 0,
-      centerTitle: true,
-      backgroundColor: const Color(0xFF1A1A1A),
-      surfaceTintColor: Colors.transparent,
-      titleTextStyle: GoogleFonts.poppins(
-        fontSize: 24,
-        fontWeight: FontWeight.bold,
-        color: const Color(0xFF2196F3),
-      ),
-      iconTheme: const IconThemeData(
-        color: Color(0xFF2196F3),
-      ),
     ),
     tabBarTheme: TabBarTheme(
       labelColor: const Color(0xFF2196F3),
