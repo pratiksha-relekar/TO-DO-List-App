@@ -148,15 +148,40 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                   TextFormField(
                     controller: _titleController,
                     decoration: InputDecoration(
-                      labelText: 'Title',
+                      labelText: 'Task Title',
                       hintText: 'Enter task title',
                       prefixIcon: Icon(
                         Icons.title,
                         color: theme.colorScheme.primary,
                       ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(
+                          color: theme.brightness == Brightness.dark 
+                              ? Colors.blue.shade300
+                              : theme.colorScheme.outline,
+                          width: 1.5,
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(
+                          color: theme.brightness == Brightness.dark 
+                              ? Colors.blue.shade300
+                              : theme.colorScheme.outline,
+                          width: 1.5,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(
+                          color: theme.colorScheme.primary,
+                          width: 2,
+                        ),
+                      ),
                     ),
                     validator: (value) {
-                      if (value == null || value.trim().isEmpty) {
+                      if (value == null || value.isEmpty) {
                         return 'Please enter a title';
                       }
                       return null;
@@ -165,6 +190,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                   const SizedBox(height: 16),
                   TextFormField(
                     controller: _descriptionController,
+                    maxLines: 3,
                     decoration: InputDecoration(
                       labelText: 'Description',
                       hintText: 'Enter task description',
@@ -172,9 +198,32 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                         Icons.description,
                         color: theme.colorScheme.primary,
                       ),
-                      alignLabelWithHint: true,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(
+                          color: theme.brightness == Brightness.dark 
+                              ? Colors.blue.shade300
+                              : theme.colorScheme.outline,
+                          width: 1.5,
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(
+                          color: theme.brightness == Brightness.dark 
+                              ? Colors.blue.shade300
+                              : theme.colorScheme.outline,
+                          width: 1.5,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(
+                          color: theme.colorScheme.primary,
+                          width: 2,
+                        ),
+                      ),
                     ),
-                    maxLines: 3,
                   ),
                   const SizedBox(height: 24),
                   Text(
@@ -215,6 +264,31 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                                   Icons.flag,
                                   color: theme.colorScheme.primary,
                                 ),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                  borderSide: BorderSide(
+                                    color: theme.brightness == Brightness.dark 
+                                        ? Colors.blue.shade300
+                                        : theme.colorScheme.outline,
+                                    width: 1.5,
+                                  ),
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                  borderSide: BorderSide(
+                                    color: theme.brightness == Brightness.dark 
+                                        ? Colors.blue.shade300
+                                        : theme.colorScheme.outline,
+                                    width: 1.5,
+                                  ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                  borderSide: BorderSide(
+                                    color: theme.colorScheme.primary,
+                                    width: 2,
+                                  ),
+                                ),
                                 contentPadding: const EdgeInsets.symmetric(
                                   horizontal: 12,
                                   vertical: 8,
@@ -249,6 +323,31 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                                   Icons.folder,
                                   color: theme.colorScheme.primary,
                                 ),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                  borderSide: BorderSide(
+                                    color: theme.brightness == Brightness.dark 
+                                        ? Colors.blue.shade300
+                                        : theme.colorScheme.outline,
+                                    width: 1.5,
+                                  ),
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                  borderSide: BorderSide(
+                                    color: theme.brightness == Brightness.dark 
+                                        ? Colors.blue.shade300
+                                        : theme.colorScheme.outline,
+                                    width: 1.5,
+                                  ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                  borderSide: BorderSide(
+                                    color: theme.colorScheme.primary,
+                                    width: 2,
+                                  ),
+                                ),
                                 contentPadding: const EdgeInsets.symmetric(
                                   horizontal: 12,
                                   vertical: 8,
@@ -274,6 +373,31 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                             prefixIcon: Icon(
                               Icons.label,
                               color: theme.colorScheme.primary,
+                            ),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                              borderSide: BorderSide(
+                                color: theme.brightness == Brightness.dark 
+                                    ? Colors.blue.shade300
+                                    : theme.colorScheme.outline,
+                                width: 1.5,
+                              ),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                              borderSide: BorderSide(
+                                color: theme.brightness == Brightness.dark 
+                                    ? Colors.blue.shade300
+                                    : theme.colorScheme.outline,
+                                width: 1.5,
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                              borderSide: BorderSide(
+                                color: theme.colorScheme.primary,
+                                width: 2,
+                              ),
                             ),
                             contentPadding: const EdgeInsets.symmetric(
                               horizontal: 12,
